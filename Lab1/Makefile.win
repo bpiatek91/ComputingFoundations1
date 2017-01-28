@@ -1,0 +1,31 @@
+# Project: Lab1-BrettPiatek
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Lab1-BrettPiatek.o program_01_11199160.o
+LINKOBJ  = Lab1-BrettPiatek.o program_01_11199160.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Lab1-BrettPiatek.exe
+CXXFLAGS = $(CXXINCS) -std=c++14
+CFLAGS   = $(INCS) -std=c++14
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Lab1-BrettPiatek.o: Lab1-BrettPiatek.cpp
+	$(CPP) -c Lab1-BrettPiatek.cpp -o Lab1-BrettPiatek.o $(CXXFLAGS)
+
+program_01_11199160.o: program_01_11199160.cpp
+	$(CPP) -c program_01_11199160.cpp -o program_01_11199160.o $(CXXFLAGS)
