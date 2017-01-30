@@ -5,14 +5,12 @@ using namespace std;
 bool STUDENT:: gpa_test(float gradeTEST){
 		bool flag = false;  
 		while (flag==false){
-			//cout<<"Enter a GPA: "; 
-			//cin>>gradeTEST; 
 			if(gradeTEST <= 4.0 && gradeTEST>0.0){ 
 				flag=true;  
 				return flag;  
 			}	
 			else{
-				cout<<"GPA is invalid. Please try again. "; 
+				cout<<"GPA is invalid. "<<endl; 
 				break; 
 			}
 		}
@@ -30,12 +28,9 @@ STUDENT::student(string a, int b, float c){
 }
 
 void STUDENT::addStudents(){
-	cout<<"How many students would you like to add to the Gradebook?(Between 0-5): "; 
-	int studentNum; 
-	float gpaNum; 
-	cin>>studentNum;
+	int studentNum;
+	float gpaNum;  
 	if(studentNum<=5 && studentNum>=0){
-		int newStudents[studentNum]={}; 
 		for (int i = 0; i<studentNum; i++){
 			cout<<"Please enter the student's name: "; 
 			cin>>name; 
@@ -57,13 +52,13 @@ void STUDENT:: newStudent(){
 	string studentName; 
 	int studentID; 
 	float studentGPA;
-	cout<<"Please enter the Name of student B: "; 
+	cout<<"Please enter the Name of student: "; 
 	cin>>studentName; 
 	set_name(studentName); 
-	cout<<"Please enter the student ID of Student B: "; 
+	cout<<"Please enter the student ID of Student: "; 
 	cin>>studentID; 
 	set_id(studentID); 
-	cout<<"Please enter the GPA of student B: "; 
+	cout<<"Please enter the GPA of student: "; 
 	cin>>studentGPA; 
 	set_gpa(studentGPA); 
 }

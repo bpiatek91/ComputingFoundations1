@@ -4,8 +4,9 @@
 using namespace std; 
 
 int main(){
-	STUDENT a, b, c;    
+	STUDENT a, b, c, d;    
 	string choice; 
+	int studentNum;
 	cout<<"Welcome to Gradebook"<<endl<<"-----------------"<<endl<<endl;   
 	a.student();  
 	cout<<"Student A's name: "<<a.get_name()<<" ID #"<<a.get_id()<<" and GPA: "<<a.get_gpa()<<endl;
@@ -21,6 +22,14 @@ int main(){
 		c.newStudent(); 
 		cout<<"Student C's name: "<<c.get_name()<<" Student ID: "<<c.get_id()<<" and GPA: "<<c.get_gpa()<<endl<<endl;
 	}
+	
+	STUDENT student[5];
+	for(int i = 0; i<5; i++){
+		student[i].newStudent();
+	}
+	for (int i = 0; i<5; i++){
+		cout<<student[i].get_gpa()<<endl;
+	}
+	
 	 
-	a.addStudents(); 
 }

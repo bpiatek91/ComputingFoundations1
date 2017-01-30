@@ -6,7 +6,7 @@ class STUDENT{
 	
 	string name; 
 	int id; 
-	float gpa; 
+	float gpa;  
 	
 	public:
 	
